@@ -12,9 +12,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "preb": "cd ..\\back\\static && rd /q /s build && del ..\\templates\\index.html && cd ..\\..\\front",
+    "allb": "yarn preb && yarn build && yarn postb && cd .. && py app.py",
+    "preb": "cd ..\\back && rd /q /s static && del templates /q \\* && cd ..\\front",
     "build": "react-scripts build",
-    "postb": "move build\\index.html ..\\back\\templates\\ && move build ..\\back\\static\\",
+    "postb": "cd build && move * ..\\..\\back\\templates\\ && Xcopy * ..\\..\\back /s /e /y && cd ..",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
